@@ -8,14 +8,17 @@ my_adress = "Gräfstr. 121A, 81241 München"
 phone = "+49 176 20674272"
 city = "München, den "
 email = "vincent.vincent@haw-hamburg.de"
-company_name = "airbus"
+company_name = "EDAG"
+available_date = "01.10.2022"
+available_duracy = "6 Monate"
 application_title = f"BEWERBUNG ALS {job.upper()} - {job_field.upper()}"
 opening_text = f"Sehr geehrte Damen und Herren,\nich möchte Ihnen gleich zu Beginn Gründe nennen, warum Sie von mir als neuem {job}en profitieren werden:"
 soft_skills = [
     "Selbstständige, zuverlässige, und strukturierte Arbeitsweise und lösungsorientiert",
     "Rasche Auffassungsgabe",
     "Hohe Einsatzbereitschaft und Verantwortungsbewusstsein",
-    "Freude an Zusammenarbeit im Team"
+    "Freude an Zusammenarbeit im Team",
+    "Lernbereitschaft"
 ]
 
 motivation_list = [
@@ -25,6 +28,8 @@ motivation_list = [
     "Start-Up Arbeitskultur"
 ]
 reason = "blabla"
+
+closing_text = f"Gerne möchte ich meine bisherigen Erfahrungen aus dem Studium und Beruf in dieser Gelegenheit mitbringen, um einen Beitrag in Ihrem Unternehmen als ein Teil des Teams leisten zu können und ich bin zuversichtlich, dass ich mit Ihrem Unternehmen sogar mit noch mehr wertvollen Erfahrungen bereichert werden kann.\n\nIch freue mich auf eine persönliches Gespräch und überzeuge Sie gerne im persönlichen Gespräch. Ihrer positiven Rückmeldung sehe ich mit großer Freude entgegen. Außerdem stehe ich für die ausgeschriebene Stelle ab {available_date} für {available_duracy}.\n\nMit freundlichen Grüßen\nVincent"
 
 #Personal Info paragraph
 datum_unformatted = str(date.today())
@@ -61,5 +66,7 @@ document.add_paragraph(f"Darum möchte ich gerne bei {company_name.upper()} als 
 for motivation in motivation_list:
     document.add_paragraph(motivation, style="List Bullet")
 
+# Closing paragraph
+document.add_paragraph(closing_text)
 
 document.save(company_name + "_" + job.lower() + "_" + job_field.lower().replace(" ", "_") + ".docx")
